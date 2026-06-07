@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a2e;
+    color: #eaeaea;
+    margin: 0;
+    text-align: center;
+}
+
+/* Control de pantallas */
+.screen {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botones del menú */
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.menu-btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #16213e;
+    border: 2px solid #0f3460;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: bold;
+    color: #e94560;
+}
+
+.menu-btn:hover {
+    background-color: #0f3460;
+    color: white;
+}
+
+/* Pantalla de Juego */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.small-btn {
+    padding: 8px 15px;
+    background: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#status {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #f1c40f;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    grid-template-rows: repeat(3, 90px);
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    background-color: #16213e;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cell:hover { background-color: #1f2b4d; }
+.cell.x { color: #e94560; }
+.cell.o { color: #4cc9f0; }
+
+/* Pantalla de Configuración */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #16213e;
+}
+
+.setting-item.important {
+    border-bottom: none;
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+    color: #e94560;
+}
+
+select, input[type="range"] {
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+}
+
+.danger-btn {
+    padding: 10px 20px;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.danger-btn:hover { background-color: #e74c3c; }
