@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en Raya Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PANTALLA 1: MENÚ PRINCIPAL -->
+    <div id="main-menu" class="screen">
+        <h1 data-i18n="title">Tres en Raya</h1>
+        <div class="menu-buttons">
+            <button class="menu-btn" id="btn-solo" data-i18n="solo">Solitario</button>
+            <button class="menu-btn" id="btn-multi" data-i18n="multi">Multijugador Local</button>
+            <button class="menu-btn" id="btn-settings" data-i18n="settings">Configuración</button>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: JUEGO -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-header">
+            <button class="small-btn" id="btn-back-menu" data-i18n="back">Volver</button>
+            <h2 id="status" data-i18n="turnX">Turno de: X</h2>
+        </div>
+        
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div><div class="cell" data-index="1"></div><div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div><div class="cell" data-index="4"></div><div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div><div class="cell" data-index="7"></div><div class="cell" data-index="8"></div>
+        </div>
+
+        <button class="menu-btn" id="btn-restart" data-i18n="restart">Reiniciar Partida</button>
+    </div>
+
+    <!-- PANTALLA 3: CONFIGURACIÓN -->
+    <div id="settings-screen" class="screen hidden">
+        <h2 data-i18n="settings">Configuración</h2>
+        
+        <div class="setting-item">
+            <label data-i18n="language">Idioma:</label>
+            <select id="lang-select">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <!-- NUEVA OPCIÓN: MODO DE IA -->
+        <div class="setting-item">
+            <label data-i18n="aiMode">Modo de IA:</label>
+            <select id="ai-style-select">
+                <option value="smart">🧠 Estratega (Difícil)</option>
+                <option value="defensive">🏰 Defensor</option>
+                <option value="aggressive">⚔️ Agresivo</option>
+                <option value="random">🎲 Caótico (Fácil)</option>
+            </select>
+        </div>
+
+        <div class="setting-item">
+            <label data-i18n="volume">Volumen:</label>
+            <div>
+                <input type="range" id="volume-slider" min="0" max="100" value="50">
+                <span id="volume-value">50%</span>
+            </div>
+        </div>
+
+        <div class="setting-item">
+            <label data-i18n="soundEffects">Efectos de Sonido:</label>
+            <input type="checkbox" id="sound-toggle" checked>
+        </div>
+
+        <div class="setting-item important">
+            <label data-i18n="resetData">Opción Importante: Resetear Datos</label>
+            <button class="danger-btn" id="btn-reset-data" data-i18n="resetBtn">Borrar Todo</button>
+        </div>
+
+        <button class="menu-btn" id="btn-back-settings" data-i18n="back">Volver</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
